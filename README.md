@@ -20,3 +20,6 @@ El backtraking lo que va a hacer es analizar todas las posibilidades con las cua
 Algoritmo AC-3  
 
 Este algoritmo se basa en analizar los arcos y dominios de las variables, disminuyendo posibilidades y dominios para un proceso mas eficiente.
+
+Pagina HTMl:
+![alt text](image.png)
