@@ -12,7 +12,7 @@ const sudoku = [ //list with the sudoku board for testing
 
 function verificar(tablero, fila, col, num) { //Function to check which numbers can be placed in each cell
     for (let i = 0; i < 9; i++)
-        if (tablero[fila][i] === num) return false // verfica por cada fila que el numero no se repita
+        if (tablero[fila][i] === num) return false // verfica por cada fila que el numero no se repita 
 
     for (let j = 0; j < 9; j++)
         if (tablero[j][col] === num) return false // verifica por cada columna que el numero no se repita
@@ -26,22 +26,22 @@ function verificar(tablero, fila, col, num) { //Function to check which numbers 
     return true
 }
 
-function revisar(Xi, Xj, dominios) { // Funcion para revisar los dominios de cada casilla y eliminar los valores que ya no son posibles
+function revisar(Xi, Xj, dominios) { //Funtion to review the domains of each cell and eliminate values that are no longer possible
 
     let eliminado = false
 
     const domXi = dominios.get(Xi.toString())
     const domXj = dominios.get(Xj.toString())
     for (const xi of [...domXi]) {
-        if (!domXj.some(xj => xj !== xi)) {
-            domXi.splice(domXi.indexOf(xi), 1)
-            eliminado = true
+        if (!domXj.some(xj => xj !== xi)) { // search for a value in the domain of Xj that is different from xi
+            domXi.splice(domXi.indexOf(xi), 1) // Delete some value from the domain with specific position
+            eliminado = true 
         }
     }
     return eliminado
 }
 
-function ac3(tablero, dominios) { // Funcion con base al algoritmo AC-3 pra reducir dominios 
+function ac3(tablero, dominios) { // Funtion with base on the AC-3 algorithm to reduce domains
 
     function vecinos(f, c) {
         const vecs = new Set()
@@ -75,7 +75,7 @@ function ac3(tablero, dominios) { // Funcion con base al algoritmo AC-3 pra redu
     return true
 }
 
-function backtrack(tablero) { // Funcion de backtrack para encontrar su respectiva solución 
+function backtrack(tablero) { //Funtion of backtracking to find the solution of the sudoku
 
     let mejor = null
     let menor = Infinity
