@@ -75,8 +75,7 @@ function ac3(tablero, dominios) { // Funcion con base al algoritmo AC-3 pra redu
     return true
 }
 
-function backtrack(tablero, contador = [0]) { // Funcion de backtrack para encontrar su respectiva solución 
-    contador[0]++
+function backtrack(tablero) { // Funcion de backtrack para encontrar su respectiva solución 
 
     let mejor = null
     let menor = Infinity
