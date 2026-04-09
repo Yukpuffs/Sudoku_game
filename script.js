@@ -12,15 +12,15 @@ const sudoku = [ //list with the sudoku board for testing
 
 function verificar(tablero, fila, col, num) { //Function to check which numbers can be placed in each cell
     for (let i = 0; i < 9; i++)
-        if (tablero[fila][i] === num) return false // verfica por cada fila que el numero no se repita 
+        if (tablero[fila][i] === num) return false // Checks each row to ensure the number does not repeat
 
     for (let j = 0; j < 9; j++)
-        if (tablero[j][col] === num) return false // verifica por cada columna que el numero no se repita
+        if (tablero[j][col] === num) return false // Checks each column to ensure the number does not repeat
 
     const inicio_fila = Math.floor(fila / 3) * 3
     const inicio_col = Math.floor(col / 3) * 3
 
-    for (let i = inicio_fila; i < inicio_fila + 3; i++) // verifica por cada subcuadro de 3x3 que el numero no se repita
+    for (let i = inicio_fila; i < inicio_fila + 3; i++) // Checks each 3x3 subgrid to ensure the number does not repeat
         for (let j = inicio_col; j < inicio_col + 3; j++)
             if (tablero[i][j] === num) return false
     return true
